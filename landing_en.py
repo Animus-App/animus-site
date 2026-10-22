@@ -503,6 +503,7 @@ st.markdown(
                   display:flex; justify-content:space-between;
                   flex-wrap:wrap; gap:12px;
                   color:#7d89a8; font-size:12.5px; }}
+    .mnav {{ display:none; }}
     @media (max-width: 900px) {{
         .sec {{ padding:56px 28px; }}
         .hero-top, .hero-grid {{ padding-left:28px; padding-right:28px; }}
@@ -579,14 +580,17 @@ st.markdown(
 
         /* logo ABC: centrado y grande */
         .abc-logo {{ justify-content:center; transform:none; }}
-        .abc-logo .wm {{ transform:scale(1.25); transform-origin:center; }}
+        .abc-logo {{ overflow:hidden; }}
+        div:has(> .wm) {{ max-width:100%; overflow:hidden; }}
+        .abc-logo .wm {{ transform:scale(.9); transform-origin:center; }}
 
         /* pasos: número + título en una línea */
-        .steps > div {{ display:grid; grid-template-columns:54px 1fr;
-                        column-gap:16px; align-items:center; }}
-        .stepnum {{ width:54px; height:54px; font-size:24px; }}
+        .steps > div {{ display:flex; flex-wrap:wrap;
+                        align-items:center; column-gap:16px; row-gap:14px; }}
+        .stepnum {{ width:54px; height:54px; font-size:24px; flex:0 0 54px; }}
+        .steps > div > *:nth-child(2) {{ flex:1; min-width:0; }}
+        .steps > div > *:nth-child(n+3) {{ flex:0 0 100%; }}
         .steps h3 {{ margin:0; }}
-        .steps p {{ grid-column:1/-1; margin-top:12px; }}
 
         /* menos aire muerto */
         .benefits h2 {{ margin-bottom:24px !important; }}
@@ -606,7 +610,6 @@ st.markdown(
         .mnav a:active {{ color:{ORANGE}; }}
         .sitefoot {{ padding-bottom:110px; }}
     }}
-    .mnav {{ display:none; }}
     header[data-testid="stHeader"] {{ display:none; }}
     [data-testid="stToolbar"], .stAppDeployButton,
     [data-testid="stDecoration"], #MainMenu {{ display:none !important; }}
