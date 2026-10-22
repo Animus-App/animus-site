@@ -590,7 +590,8 @@ st.markdown(
         .sec3h2 {{ text-align:left !important; min-width:0 !important; }}
         [data-testid="stAppViewContainer"] {{ overflow-x:hidden; }}
         .fan, .shotfan, .shotfan4 {{ overflow:hidden; }}
-        .twocard {{ grid-template-columns:1fr; }}
+        .twocard {{ flex-direction:column; }}
+        .vs-wrap {{ flex-direction:column; }}
         .week-cards {{ grid-template-columns:1fr; }}
         .wordmark-wrap {{ flex-wrap:wrap; }}
     }}
@@ -616,6 +617,12 @@ st.markdown(
         .steps {{ gap:36px; }}
         .abc-logo {{ transform:scale(.85); transform-origin:left; }}
         .wm {{ transform:scale(.62); }}
+        .stats {{ justify-content:center; }}
+        .stat {{ text-align:center; }}
+        .stat .cap {{ margin-left:auto; margin-right:auto; }}
+        .vs-card {{ font-size:17px; padding:24px 20px; }}
+        .vs-card .vs-tag {{ font-size:14px; }}
+        .mini .big {{ font-size:32px; }}
         .hero-sub {{ font-size:15px; }}
         details.qa .q {{ font-size:16px; }}
         .faq h3 {{ font-size:22px; }}
