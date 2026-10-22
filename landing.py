@@ -140,7 +140,7 @@ def wordmark(color: str = "#ffffff", size: int = 30) -> str:
     """Logo: tres puntos + 'animus' en serif."""
     d = size * 0.44
     return f'''
-    <span style="display:inline-flex;align-items:center;gap:{d * .38:.0f}px">
+    <span class="wm" style="display:inline-flex;align-items:center;gap:{d * .38:.0f}px">
       <span style="width:{d:.0f}px;height:{d:.0f}px;border-radius:50%;
             background:{TEAL};display:inline-block"></span>
       <span style="width:{d:.0f}px;height:{d:.0f}px;border-radius:50%;
@@ -585,6 +585,9 @@ st.markdown(
         .closing h2 {{ font-size:36px; }}
         .hero-nav {{ display:none; }}
         html, body {{ overflow-x:hidden; }}
+        svg {{ max-width:100%; height:auto; }}
+        .wm {{ transform:scale(.8); transform-origin:left center; }}
+        .sec3h2 {{ text-align:left !important; min-width:0 !important; }}
         [data-testid="stAppViewContainer"] {{ overflow-x:hidden; }}
         .fan, .shotfan, .shotfan4 {{ overflow:hidden; }}
         .twocard {{ grid-template-columns:1fr; }}
@@ -612,6 +615,8 @@ st.markdown(
         .priv-cols {{ grid-template-columns:1fr; }}
         .steps {{ gap:36px; }}
         .abc-logo {{ transform:scale(.85); transform-origin:left; }}
+        .wm {{ transform:scale(.62); }}
+        .hero-sub {{ font-size:15px; }}
         details.qa .q {{ font-size:16px; }}
         .faq h3 {{ font-size:22px; }}
         .foot-base {{ flex-direction:column; }}
@@ -737,7 +742,7 @@ st.markdown(
                     align-items:center;gap:48px;flex-wrap:wrap;
                     margin-bottom:20px">
             <div>{wordmark(color=INK, size=66)}</div>
-            <h2 style="text-align:right;flex:1;min-width:300px">Observa,
+            <h2 class="sec3h2" style="text-align:right;flex:1;min-width:300px">Observa,
                 pregunta y aprende.<br>Tú solo respondes lo breve.</h2>
         </div>
         <div class="steps">
