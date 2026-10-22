@@ -1,0 +1,9 @@
+# Datos reales — nunca al repo
+*.enc
+*.json
+__pycache__/
+.venv/
+*.log
+patch_*.py
+site_design/
+DESCRIPCION_ANIMUS.md
