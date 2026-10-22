@@ -504,6 +504,7 @@ st.markdown(
                   flex-wrap:wrap; gap:12px;
                   color:#7d89a8; font-size:12.5px; }}
     .mnav {{ display:none; }}
+    .msent {{ position:fixed; top:0; left:0; width:0; height:0; }}
     @media (max-width: 900px) {{
         .sec {{ padding:56px 28px; }}
         .hero-top, .hero-grid {{ padding-left:28px; padding-right:28px; }}
@@ -599,20 +600,44 @@ st.markdown(
         .shotfan {{ height:280px; }}
         .fan {{ height:280px; }}
 
-        /* barra de navegación móvil fija */
-        .mnav {{ display:flex; position:fixed; bottom:0; left:0; right:0;
-                 z-index:9999; background:{NAVY};
-                 padding:11px 6px calc(11px + env(safe-area-inset-bottom));
-                 justify-content:space-around;
-                 box-shadow:0 -3px 14px rgba(0,0,0,.3); }}
-        .mnav a {{ color:#dfe6f2; font-size:13px; font-weight:600;
-                   text-decoration:none; padding:4px 2px; }}
-        .mnav a:active {{ color:{ORANGE}; }}
-        .sitefoot {{ padding-bottom:110px; }}
+        /* menú flotante: botón con los 3 puntos que despliega enlaces */
+        .mnav {{ display:block; position:fixed; right:18px;
+                 bottom:calc(18px + env(safe-area-inset-bottom));
+                 z-index:9999; }}
+        .mfab {{ width:56px; height:56px; border-radius:50%;
+                 background:{NAVY};
+                 display:flex; align-items:center; justify-content:center;
+                 gap:6px; text-decoration:none;
+                 border:1px solid rgba(255,255,255,.16);
+                 box-shadow:0 8px 22px rgba(11,17,38,.5); }}
+        .mfab i {{ width:9px; height:9px; border-radius:50%;
+                   display:block; }}
+        .mfab-x {{ display:none; color:{CYAN}; font-size:20px;
+                   font-weight:700; font-family:sans-serif; }}
+        .mlinks {{ display:none; position:absolute; right:0; bottom:68px;
+                   flex-direction:column; min-width:196px;
+                   background:#131b36;
+                   border:1px solid rgba(255,255,255,.13);
+                   border-radius:18px; padding:8px;
+                   box-shadow:0 14px 34px rgba(11,17,38,.55); }}
+        .mlinks a {{ display:block; color:#eef1f7; text-decoration:none;
+                     font-size:15px; font-weight:600; padding:12px 16px;
+                     border-radius:12px; }}
+        .mlinks a:active {{ background:rgba(255,255,255,.09);
+                            color:{ORANGE}; }}
+        .mlinks a:last-child {{ color:{ORANGE}; }}
+        #mopen:target ~ .mlinks {{ display:flex; }}
+        #mopen:target ~ .mfab-open {{ display:none; }}
+        #mopen:target ~ .mfab-x {{ display:flex; }}
+        .sitefoot {{ padding-bottom:100px; }}
     }}
     header[data-testid="stHeader"] {{ display:none; }}
     [data-testid="stToolbar"], .stAppDeployButton,
-    [data-testid="stDecoration"], #MainMenu {{ display:none !important; }}
+    [data-testid="stDecoration"], #MainMenu,
+    [data-testid="stStatusWidget"], [data-testid="stToolbarActions"],
+    [data-testid="manage-app-button"], [class*="viewerBadge"],
+    [class*="ViewerBadge"], [data-testid="stAppDeployButton"]
+    {{ display:none !important; }}
     [data-testid="stMainBlockContainer"] {{ padding-top:1.4rem; }}
     </style>
     """,
@@ -1378,11 +1403,20 @@ st.markdown(
 st.markdown(
     f"""
     <div class="mnav">
-        <a href="#informe">Report</a>
-        <a href="#terapeutas">Therapists</a>
-        <a href="#parati">For you</a>
-        <a href="#faq">FAQ</a>
-        <a href="?lang=es" target="_self">ES</a>
+        <span id="mopen" class="msent"></span>
+        <span id="mclose" class="msent"></span>
+        <nav class="mlinks">
+            <a href="#informe">The report</a>
+            <a href="#terapeutas">For therapists</a>
+            <a href="#parati">For you</a>
+            <a href="#privacidad">Privacy</a>
+            <a href="#faq">FAQ</a>
+            <a href="?lang=es" target="_self">ES · Español</a>
+        </nav>
+        <a class="mfab mfab-open" href="#mopen" aria-label="Open menu">
+            <i style="background:{TEAL}"></i><i style="background:{CYAN}"></i><i style="background:{CORAL}"></i>
+        </a>
+        <a class="mfab mfab-x" href="#mclose" aria-label="Close menu">✕</a>
     </div>
     <div class="sitefoot">
         <div class="foot-grid">
