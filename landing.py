@@ -599,7 +599,7 @@ st.markdown(
     }}
     @media (max-width: 640px) {{
         .sec {{ padding:44px 20px; }}
-        .hero-top {{ padding:0 20px; }}
+        .hero-top {{ padding:30px 20px 36px; }}
         .hero-grid {{ padding:0 20px; }}
         .closing {{ padding:44px 20px 32px; }}
         .sitefoot {{ padding:44px 20px 32px; }}
