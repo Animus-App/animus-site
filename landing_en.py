@@ -601,9 +601,8 @@ st.markdown(
         .fan {{ height:280px; }}
 
         /* menú flotante: botón con los 3 puntos que despliega enlaces */
-        .mnav {{ display:block; position:fixed; right:18px;
-                 bottom:calc(18px + env(safe-area-inset-bottom));
-                 z-index:9999; }}
+        .mnav {{ display:block; position:fixed; right:16px;
+                 top:16px; z-index:9999; }}
         .mfab {{ width:56px; height:56px; border-radius:50%;
                  background:{NAVY};
                  display:flex; align-items:center; justify-content:center;
@@ -614,7 +613,7 @@ st.markdown(
                    display:block; }}
         .mfab-x {{ display:none; color:{CYAN}; font-size:20px;
                    font-weight:700; font-family:sans-serif; }}
-        .mlinks {{ display:none; position:absolute; right:0; bottom:68px;
+        .mlinks {{ display:none; position:absolute; right:0; top:66px;
                    flex-direction:column; min-width:196px;
                    background:#131b36;
                    border:1px solid rgba(255,255,255,.13);
