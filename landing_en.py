@@ -562,6 +562,7 @@ st.markdown(
         .steps {{ gap:36px; }}
         .abc-logo {{ transform:scale(.85); transform-origin:left; }}
         .wm {{ transform:scale(.62); }}
+        .hero-top .wm {{ transform:scale(1.7); transform-origin:left center; }}
         .stats {{ justify-content:center; }}
         .stat {{ text-align:center; }}
         .stat .cap {{ margin-left:auto; margin-right:auto; }}
