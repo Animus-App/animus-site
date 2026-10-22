@@ -573,7 +573,44 @@ st.markdown(
         .nochips {{ gap:10px; }}
         .chip {{ font-size:12px; }}
         .btn {{ padding:14px 26px; font-size:15px; }}
+
+        /* stats fuera en teléfono */
+        .stats {{ display:none; }}
+
+        /* logo ABC: centrado y grande */
+        .abc-logo {{ justify-content:center; transform:none; }}
+        .abc-logo .wm {{ transform:scale(1.25); transform-origin:center; }}
+
+        /* pasos: número + título en una línea */
+        .steps > div {{ display:grid; grid-template-columns:54px 1fr;
+                        column-gap:16px; align-items:center; }}
+        .stepnum {{ width:54px; height:54px; font-size:24px; }}
+        .steps h3 {{ margin:0; }}
+        .steps p {{ grid-column:1/-1; margin-top:12px; }}
+
+        /* menos aire muerto */
+        .benefits h2 {{ margin-bottom:24px !important; }}
+        .sec h2 {{ margin-bottom:20px; }}
+        .sec {{ padding:40px 20px; }}
+        .shotfan {{ height:280px; }}
+        .fan {{ height:280px; }}
+
+        /* barra de navegación móvil fija */
+        .mnav {{ display:flex; position:fixed; bottom:0; left:0; right:0;
+                 z-index:9999; background:{NAVY};
+                 padding:11px 6px calc(11px + env(safe-area-inset-bottom));
+                 justify-content:space-around;
+                 box-shadow:0 -3px 14px rgba(0,0,0,.3); }}
+        .mnav a {{ color:#dfe6f2; font-size:13px; font-weight:600;
+                   text-decoration:none; padding:4px 2px; }}
+        .mnav a:active {{ color:{ORANGE}; }}
+        .sitefoot {{ padding-bottom:110px; }}
     }}
+    .mnav {{ display:none; }}
+    header[data-testid="stHeader"] {{ display:none; }}
+    [data-testid="stToolbar"], .stAppDeployButton,
+    [data-testid="stDecoration"], #MainMenu {{ display:none !important; }}
+    [data-testid="stMainBlockContainer"] {{ padding-top:1.4rem; }}
     </style>
     """,
     unsafe_allow_html=True,
@@ -1337,6 +1374,13 @@ st.markdown(
 
 st.markdown(
     f"""
+    <div class="mnav">
+        <a href="#informe">Report</a>
+        <a href="#terapeutas">Therapists</a>
+        <a href="#parati">For you</a>
+        <a href="#faq">FAQ</a>
+        <a href="?lang=es" target="_self">ES</a>
+    </div>
     <div class="sitefoot">
         <div class="foot-grid">
             <div>
