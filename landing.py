@@ -584,6 +584,40 @@ st.markdown(
         .stat .num {{ font-size:44px; }}
         .closing h2 {{ font-size:36px; }}
         .hero-nav {{ display:none; }}
+        html, body {{ overflow-x:hidden; }}
+        [data-testid="stAppViewContainer"] {{ overflow-x:hidden; }}
+        .fan, .shotfan, .shotfan4 {{ overflow:hidden; }}
+        .twocard {{ grid-template-columns:1fr; }}
+        .week-cards {{ grid-template-columns:1fr; }}
+        .wordmark-wrap {{ flex-wrap:wrap; }}
+    }}
+    @media (max-width: 640px) {{
+        .sec {{ padding:44px 20px; }}
+        .hero-top {{ padding:0 20px; }}
+        .hero-grid {{ padding:0 20px; }}
+        .closing {{ padding:44px 20px 32px; }}
+        .sitefoot {{ padding:44px 20px 32px; }}
+        .hero h1 {{ font-size:34px; }}
+        .sec h2 {{ font-size:28px; }}
+        .closing h2 {{ font-size:30px; }}
+        .stat .num {{ font-size:36px; }}
+        .stats {{ gap:24px; }}
+        .cta-row {{ flex-direction:column; align-items:stretch; }}
+        .cta-row .btn {{ text-align:center; }}
+        .shotfan {{ height:300px; }}
+        .shotfan4 {{ height:260px; }}
+        .fan {{ height:300px; }}
+        .galgrid {{ grid-template-columns:1fr; }}
+        .dayrow {{ grid-template-columns:1fr; }}
+        .priv-cols {{ grid-template-columns:1fr; }}
+        .steps {{ gap:36px; }}
+        .abc-logo {{ transform:scale(.85); transform-origin:left; }}
+        details.qa .q {{ font-size:16px; }}
+        .faq h3 {{ font-size:22px; }}
+        .foot-base {{ flex-direction:column; }}
+        .nochips {{ gap:10px; }}
+        .chip {{ font-size:12px; }}
+        .btn {{ padding:14px 26px; font-size:15px; }}
     }}
     </style>
     """,
