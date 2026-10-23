@@ -562,6 +562,17 @@ st.markdown(
                   color:#7d89a8; font-size:12.5px; }}
     .mnav {{ display:none; }}
     .msent {{ position:fixed; top:0; left:0; width:0; height:0; }}
+    /* esferas del logo que saltan en su lugar, nunca a la vez */
+    @keyframes wmh {{
+        0%, 18%, 100% {{ transform:translateY(0); }}
+        9% {{ transform:translateY(-12px); }}
+    }}
+    .hero-top .wm > span:nth-child(1) {{ animation:wmh 2.3s ease-in-out infinite; }}
+    .hero-top .wm > span:nth-child(2) {{ animation:wmh 3.1s ease-in-out infinite; }}
+    .hero-top .wm > span:nth-child(3) {{ animation:wmh 2.7s ease-in-out infinite; }}
+    @media (prefers-reduced-motion: reduce) {{
+        .hero-top .wm > span {{ animation:none !important; }}
+    }}
     @media (max-width: 900px) {{
         .sec {{ padding:56px 28px; }}
         .hero-top, .hero-grid {{ padding-left:28px; padding-right:28px; }}
