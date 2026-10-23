@@ -250,7 +250,7 @@ st.markdown(
         background:{NAVY}; color:#fff;
         font-family:'Playfair Display',serif; font-size:34px;
         font-weight:700; text-align:center; line-height:70px;
-        margin-bottom:26px;
+        margin:0 auto 26px;
     }}
     .steps h3 {{ font-family:'Playfair Display',serif; font-size:22px;
                  color:{NAVY}; margin:0 0 10px; }}
@@ -608,7 +608,7 @@ st.markdown(
         /* pasos: número + título en una línea */
         .steps > div {{ display:flex; flex-wrap:wrap;
                         align-items:center; column-gap:16px; row-gap:14px; }}
-        .stepnum {{ width:42px; height:42px; font-size:19px; flex:0 0 42px; line-height:39px; margin-bottom:0; }}
+        .stepnum {{ width:42px; height:42px; font-size:19px; flex:0 0 42px; line-height:39px; margin:0; }}
         .steps > div > *:nth-child(2) {{ flex:1; min-width:0; }}
         .steps > div > *:nth-child(n+3) {{ flex:0 0 100%; }}
         div:has(> .chip) {{ text-align:center; }}
