@@ -517,7 +517,7 @@ st.markdown(
         .dayrow {{ grid-template-columns:1fr 1fr; }}
         .galgrid {{ grid-template-columns:1fr 1fr; }}
         .abc {{ grid-template-columns:1fr; }}
-        .abc-split {{ grid-template-columns:1fr; gap:30px; }}
+        .abc-split {{ grid-template-columns:1fr; gap:30px; margin-top:16px; }}
         .shotfan4 {{ height:300px; }}
         .abc-top {{ grid-template-columns:1fr; }}
         .abc-patterns .cols {{ grid-template-columns:1fr; gap:0; }}
@@ -559,7 +559,7 @@ st.markdown(
         .galgrid {{ grid-template-columns:1fr; }}
         .dayrow {{ grid-template-columns:1fr; }}
         .priv-cols {{ grid-template-columns:1fr; }}
-        .steps {{ gap:36px; }}
+        .steps {{ gap:36px; margin-top:20px; }}
         .abc-logo {{ transform:scale(.85); transform-origin:left; }}
         .wm {{ transform:scale(.62); }}
         .hero-top .wm {{ transform:scale(1.7); transform-origin:left center; }}
@@ -589,7 +589,7 @@ st.markdown(
         /* pasos: número + título en una línea */
         .steps > div {{ display:flex; flex-wrap:wrap;
                         align-items:center; column-gap:16px; row-gap:14px; }}
-        .stepnum {{ width:54px; height:54px; font-size:24px; flex:0 0 54px; }}
+        .stepnum {{ width:42px; height:42px; font-size:19px; flex:0 0 42px; line-height:39px; margin-bottom:0; }}
         .steps > div > *:nth-child(2) {{ flex:1; min-width:0; }}
         .steps > div > *:nth-child(n+3) {{ flex:0 0 100%; }}
         .steps h3 {{ margin:0; }}
@@ -608,7 +608,7 @@ st.markdown(
                  background:{NAVY};
                  display:flex; align-items:center; justify-content:center;
                  gap:6px; text-decoration:none;
-                 border:1px solid rgba(255,255,255,.16);
+                 border:2px solid rgba(255,255,255,.75);
                  box-shadow:0 8px 22px rgba(11,17,38,.5); }}
         .mfab i {{ width:9px; height:9px; border-radius:50%;
                    display:block; }}
@@ -1441,6 +1441,9 @@ st.markdown(
                 <h6>This site</h6>
                 <ul>
                     <li><a href="mailto:animusapp@protonmail.com">animusapp@protonmail.com</a></li>
+                    <li><a href="https://instagram.com/animus.app"
+                           target="_blank" rel="noopener">Instagram ·
+                           @animus.app</a></li>
                     <li><a href="?lang=es" target="_self">Versión en español</a></li>
                 </ul>
                 <div class="fnote" style="margin-top:14px">No tracking
