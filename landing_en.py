@@ -559,6 +559,9 @@ st.markdown(
         .hero-top {{ padding:52px 20px 36px; }}
         .hero-grid {{ padding:0 20px; }}
         .closing {{ padding:44px 20px 32px; }}
+        .closing h2 {{ margin-top:26px; margin-bottom:28px; }}
+        .closing .foot {{ margin-top:38px; }}
+        .priv-foot {{ margin-top:26px; }}
         .sitefoot {{ padding:44px 20px 32px; }}
         .hero h1 {{ font-size:34px; }}
         .sec h2 {{ font-size:28px; }}
