@@ -521,7 +521,7 @@ st.markdown(
         .shotfan4 {{ height:300px; }}
         .abc-top {{ grid-template-columns:1fr; }}
         .abc-patterns .cols {{ grid-template-columns:1fr; gap:0; }}
-        .abc-patterns {{ grid-template-columns:1fr; gap:24px; }}
+        .abc-patterns {{ grid-template-columns:1fr; gap:24px; margin-top:28px; }}
         .foot-grid {{ grid-template-columns:1fr; gap:32px; }}
         .abc-logo {{ justify-content:flex-start; }}
         .shotfan {{ height:360px; }}
@@ -536,6 +536,9 @@ st.markdown(
         [data-testid="stAppViewContainer"] {{ overflow-x:hidden; }}
         .fan, .shotfan, .shotfan4 {{ overflow:hidden; }}
         .twocard {{ flex-direction:column; }}
+        .benefits {{ gap:24px; }}
+        .benefit {{ margin-bottom:16px; }}
+        .twocard .mini-navy {{ text-align:center; }}
         .vs-wrap {{ flex-direction:column; }}
         .week-cards {{ grid-template-columns:1fr; }}
         .wordmark-wrap {{ flex-wrap:wrap; }}
@@ -559,7 +562,9 @@ st.markdown(
         .galgrid {{ grid-template-columns:1fr; }}
         .dayrow {{ grid-template-columns:1fr; }}
         .priv-cols {{ grid-template-columns:1fr; }}
-        .steps {{ gap:36px; margin-top:20px; }}
+        .steps {{ gap:22px; margin-top:10px; }}
+        .sec3-top {{ gap:12px !important; margin-bottom:4px !important; }}
+        #observa {{ padding-top:26px; }}
         .abc-logo {{ transform:scale(.85); transform-origin:left; }}
         .wm {{ transform:scale(.62); }}
         .hero-top .wm {{ transform:scale(1.7); transform-origin:left center; }}
@@ -592,6 +597,8 @@ st.markdown(
         .stepnum {{ width:42px; height:42px; font-size:19px; flex:0 0 42px; line-height:39px; margin-bottom:0; }}
         .steps > div > *:nth-child(2) {{ flex:1; min-width:0; }}
         .steps > div > *:nth-child(n+3) {{ flex:0 0 100%; }}
+        div:has(> .chip) {{ text-align:center; }}
+        .prompt-card {{ text-align:center; }}
         .steps h3 {{ margin:0; }}
 
         /* menos aire muerto */
@@ -754,8 +761,8 @@ st.markdown(
 
 st.markdown(
     f"""
-    <div class="sec sec-white">
-        <div style="display:flex;justify-content:space-between;
+    <div class="sec sec-white" id="observa">
+        <div class="sec3-top" style="display:flex;justify-content:space-between;
                     align-items:center;gap:48px;flex-wrap:wrap;
                     margin-bottom:20px">
             <div>{wordmark(color=INK, size=66)}</div>
